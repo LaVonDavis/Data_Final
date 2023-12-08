@@ -1,0 +1,14 @@
+import plotly.express as px
+import pandas as pd
+import plotly.io as pio
+pio.renderers.default='browser'
+
+df = pd.read_csv('cost_of_living_us.csv')
+df.dropna()
+dataframe = pd.DataFrame(df)
+
+matrix = dataframe.corr()
+
+fig = px.imshow(matrix, text_auto=True, aspect="auto")
+
+fig.show()
