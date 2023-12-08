@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.express as px
+
+df = pd.read_csv('cost_of_living_us.csv')
+
+import seaborn as sns
+
+# Sample data
+# Create a linear regression plot
+sns.lineplot(data=df, x="taxes", y="total_cost", palette=['r'], linewidth=2.5)
+
+sns.regplot(data = df, x="taxes", y="total_cost")
+
+# Show the plot
+plt.title("Linear Regression Plot with Seaborn")
+plt.show()
+
