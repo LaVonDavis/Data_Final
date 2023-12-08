@@ -1,0 +1,9 @@
+import plotly.express as px
+import pandas as pd
+import plotly.io as pio
+pio.renderers.default='browser'
+
+df = pd.read_csv('cost_of_living_us.csv')
+fig = px.box(df, x='food_cost', y='state', color='state')
+
+fig.show()
