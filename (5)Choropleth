@@ -4,6 +4,7 @@ import plotly.io as pio
 pio.renderers.default='browser'
 
 df = pd.read_csv('cost_of_living_us.csv')
+df.dropna()
 dm = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/2011_us_ag_exports.csv')
 
 fig = go.Figure(data=go.Choropleth(
