@@ -1,0 +1,8 @@
+import plotly.io as pio
+import pandas as pd
+import plotly.express as px
+pio.renderers.default='browser'
+
+df = pd.read_csv('clean_COL.csv')
+fig = px.scatter_3d(df, x='transportation_cost', y='healthcare_cost', z='childcare_cost', color='state')
+fig.show()
